@@ -21,7 +21,7 @@ public class Board {
     @OneToOne (fetch = FetchType.LAZY)
     private Like like; //좋아요
     @NotNull
-    private String name; //작성자
+    private String writer; //작성자
 
     private String content; // 내용
 
@@ -29,9 +29,9 @@ public class Board {
     private List<Comment> commentList = new ArrayList<>();
 
     @Builder
-    public Board(String title, String name, String content){
+    public Board(String title, String writer, String content){
         this.title = title;
         this.content = content;
-        this.name = name;
+        this.writer = writer;
     }
 }
